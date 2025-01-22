@@ -1,0 +1,1045 @@
+<html lang="en"><head>
+		<title></title>
+		<link rel="stylesheet" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">	
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css">
+		<link rel="stylesheet" href="articles.css">
+		<link rel="stylesheet" href="footer.css">
+		<link rel="stylesheet" href="topnav.css">		
+			
+		<style>
+			body {
+				background-color: #e9e5df;
+			}
+			.error {
+				color: red;
+				font-weight: 700;
+			}
+
+			.fa-circle-check {
+				font-weight: 300;
+				font-size: 2rem;
+				padding: 10px;
+				color: green;
+			}
+			.fa-circle-exclamation{
+				font-weight: 900;
+				font-size: 2rem;
+				padding: 10px;
+				color: #ff0000a8;
+			}
+
+			.closeModal {
+				color: #625f5f;
+				float: right;
+				font-size: 28px;
+				font-weight: bold;
+				padding: 10px 20px 10px;
+			}
+			.closeModal:hover,
+			.closeModal:focus {
+				color: black;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+			.modalk {
+				display: none;
+			}
+			.comment-modal-content {
+				background-color: #d1e7dd;
+
+				width: 100%;
+				border: 2px solid green;
+				display: flex;
+				border-radius: 7px;
+				align-items: self-start;
+				justify-content: space-between;
+				flex-direction: row;
+			
+			}
+			.modal-content-error{
+				background-color: #f8d7da;
+				width: 100%; 
+				border: 2px solid rgb(128, 0, 0);
+				display: flex;
+				border-radius: 7px;
+				align-items: self-start;
+				justify-content: space-between;
+				flex-direction: row;
+				margin-bottom: 20px;
+			}
+		</style>
+        <style>
+          
+          main {
+        padding: 1rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+   
+
+    .criteria h2 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin: 0 0 1rem 0;
+        color: #4a4a4a;
+        font-weight: 600;
+    }
+
+    .criterion {
+        margin-bottom: 0.75rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 12px;
+        background: #f7f7f7;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .criterion:hover {
+        background: #eeeeee;
+        transform: translateX(2px);
+    }
+
+    label {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #333333;
+        margin-right: 1rem;
+    }
+
+    .stars {
+        display: flex;
+        gap: 0.25rem;
+    }
+
+    .stars span {
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #cccccc;
+        transition: all 0.3s ease;
+        padding: 0.15rem;
+    }
+
+    .stars span:hover {
+        transform: scale(1.2);
+        color: #ffcc00;
+    }
+
+    .stars span.active {
+        color: #ff9900;
+    }
+
+    button {
+        width: 100%;
+        padding: 0.75rem;
+        margin-top: 1rem;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #ffffff;
+        background: rgba(0, 113, 188, 0.8);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(255, 153, 0, 0.4);
+        background: rgb(0, 113, 188);
+    }
+
+    @media (max-width: 600px) {
+        form {
+            padding: 1rem;
+        }
+
+        .criterion {
+            padding: 0.5rem;
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+        }
+
+        label {
+            font-size: 0.9rem;
+        }
+
+        .stars span {
+            font-size: 1.25rem;
+        }
+    }
+        </style>
+	</head>
+
+	<body>
+		
+		
+		<section>
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container-fluid" id="small-screen1">
+            <a class="navbar-brand" href="#">
+                </a><div class="header_left"><a class="navbar-brand" href="#">
+                    </a><div class="navbar-brand d-flex align-items-center margin-left"><a class="navbar-brand" href="#">
+                        <img src="logo.svg" alt="Logo">
+                        </a><a href="/">Testing<span class="text-primary">Me</span></a>
+                    </div>
+                </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-0 mb-2 mb-lg-0 w-100 d-flex justify-content-between mobile-first flex-wrap">
+                    <ul class="navbar-nav me-0 mb-2 mb-lg-0 mobile-first">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" style="border-bottom: 2px solid" href="/">
+                                <div class="nav_link">
+                                    <div class="nav_icon">
+                                        <i class="bi bi-house-door-fill" style="font-size: 1.3rem !important"></i>
+                                    </div>
+                                    <div class="nav_text">Home</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/search/articles">
+                                <div class="nav_link jobs">
+                                    <div class="nav_icon">
+                                        <i class="bi bi-search" style="font-size: 1.3rem !important;margin-left: -0.2rem;"></i>
+                                    </div>
+                                    <div class="nav_text">Browse</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/content-management">
+                                <div class="nav_link jobs">
+                                    <div class="nav_icon">
+                                        <i class="bi bi-bag-fill" style="font-size: 1.3rem !important"></i>
+                                    </div>
+                                    <div class="nav_text">Manage</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-0 mb-2 mb-lg-0">
+                        <div class="d-flex align-self-end mobile-first">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/post-content">
+                                    <div class="nav_link jobs">
+                                        <div class="nav_icon">
+                                            <i class="bi bi-chat-square-text-fill" style="font-size: 1.3rem !important"></i>
+                                        </div>
+                                        <div class="nav_text">Post Content</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <div class="nav_link">
+                                        <div class="nav_icon">
+                                            <div class="info">3</div>
+                                            <i class="bi bi-bell-fill" style="font-size: 1.3rem !important"></i>
+                                        </div>
+                                        <div class="nav_text">Notifications</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <div class="header_right_2 mt-2">
+                                    <div class="nav_link" id="nav_link">
+                                        <div class="nav_icon" data-bs-toggle="dropdown" onmouseover="document.getElementById('dropdown').style.display = 'block'" onmouseleave="document.getElementById('nav_link').onmouseleave = function(){document.getElementById('dropdown').style.display = 'none';};">
+                                            <img src="avatar.png" alt="non" style="
+                                                    height: 30px;
+                                                    object-fit: contain;
+                                                    border-radius: 50px;
+                                                ">
+                                        <span class="nav_text">pubusername</span>    
+                                    </div>
+                                        
+                                        <div class="dropdown dropdown-head-linkedin-clone">
+                                            <ul id="dropdown" class="dropdown-menu d-mobile" style="left: -207px" onmouseover="document.getElementById('dropdown').style.display = 'block'">
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="profile-dropdown">
+                                                            <div class="profile-details d-flex gap-2">
+                                                                <div class="nav_icon">
+                                                                    <img src="avatar.png" alt="non" style="
+                                                                            height: 30px;
+                                                                            object-fit: contain;
+                                                                            border-radius: 50px;
+                                                                        ">
+                                                                </div>
+                                                                <h6 class="mt-2">pubusername</h6>
+                                                            </div>
+                                                            <p>
+                                                                Lorem ipsum dolor <br>
+                                                                sit amet consectetur adipisicing
+                                                                <br>
+                                                                elit. Quod, assumenda?
+                                                            </p>
+                                                            <button class="w-100 btn-profile">
+                                                                Profile
+                                                            </button>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item disabled text-black" style="font-weight: 600" href="#">Account</a>
+                                                </li>
+
+                                                <li>
+                                                    <a class="dropdown-item text-black-50" href="/my-account">Settings &amp; Privacy</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-black-50" href="#">Help</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-black-50" href="/privacy-policy">Privacy and Policy</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-black-50" href="/terms-and-conditions">Terms and Conditions</a>
+                                                </li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item disabled text-black" style="font-weight: 600" href="/content-management">Manage</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-black-50" href="#">Blogs</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-black-50" href="/articles">Articles</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-black-50" href="#">Stories</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-black-50" href="/content-management">My Content</a>
+                                                </li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-black-50" href="/logout">Logout</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</section>
+		
+		<section class="page-header">
+    <div class="container">
+        <div class="row search__header col-12 col-sm-12 col-md-12">
+            <div class="form d-flex row-items-start col-12 col-md-12">
+                <i class="fa fa-search ps-2"></i>
+                <input type="text" class="form-control form-input">
+            </div>
+        </div>
+        <div class="nav-bar position-absolute mt-3 mb-0">
+            <ul class="gap-4 align-items-center d-flex align-items-center list-unstyled text-light mb-0">
+                <li class="nav-item mt-2">
+                    <a class="nav-link px-3 pb-2 active" href="/search/articles">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 pb-2" href="/search/blogs">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 pb-2" href="/search/stories">Story</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>	
+	
+
+		<section class="article-body post__listing mb-5 row align-items-start align-items-xl-center col-md-12 col-lg-12 col-xl-12 mx-md-auto ms-sm-auto">
+			<div class="container d-flex gap-3 flex-wrap-reverse flex-sm-wrap-reverse flex-md-wrap-reverse flex-lg-nowrap mx-md-0 mx-sm-0 justify-content-md-center justify-content-sm-center">
+				                
+				<aside class="side__bar col-sm-auto col-lg-3 col-md-12 mx-md-0 mt-md-0 mt-lg-3 mt-3 ms-0 ms-md-0 ms-sm-0">
+					<div class="side__bar-items">
+						
+						<div class="search__box border rounded col-md-auto p-3 bg-white rounded mb-3" id="search__box-sm">
+    <div class="row d-flex justify-content-start">
+        <div class="col-md-12 col-lg-auto">
+            <div class="card border-0 text-dark">
+                <div class="card-body p-0">
+                    <p class="mb-0 mt-0 h5 text-capitalize text-center mb-3 pb-2">
+                        Recent comments
+                    </p>
+
+                    <div class="d-flex flex-start">
+                        <img class="rounded-circle shadow-1-strong me-3" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="40" height="40">
+                        <a href="" class="text-decoration-none text-black">
+                            <div>
+                                <h6 class="fw-bold mb-1 text-muted">Publisher Name</h6>
+                                <div class="d-flex align-items-center mb-1">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <small class="mb-0 text-muted">
+                                            <i class="fa-regular fa-calendar px-1"></i>March 15, 2024
+                                        </small>
+                                    </div>
+                                </div>
+                                <p class="mb-0 text-muted">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.														
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <hr class="my-2">
+                    
+                    <div class="d-flex flex-start">
+                        <img class="rounded-circle shadow-1-strong me-3" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="40" height="40">
+                        <a href="" class="text-decoration-none text-black">
+                            <div>
+                                <h6 class="fw-bold mb-1 text-muted">Publisher Name</h6>
+                                <div class="d-flex align-items-center mb-1">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <small class="mb-0 text-muted">
+                                            <i class="fa-regular fa-calendar px-1"></i>March 15, 2024
+                                        </small>
+                                    </div>
+                                </div>
+                                <p class="mb-0 text-muted">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.														
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <hr class="my-2">
+                    
+                    <div class="d-flex flex-start">
+                        <img class="rounded-circle shadow-1-strong me-3" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="40" height="40">
+                        <a href="" class="text-decoration-none text-black">
+                            <div>
+                                <h6 class="fw-bold mb-1">Publisher Name</h6>
+                                <div class="d-flex align-items-center mb-1">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <small class="mb-0 text-muted">
+                                            <i class="fa-regular fa-calendar px-1"></i>March 15, 2024
+                                        </small>
+                                    </div>
+                                </div>
+                                <p class="mb-0">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.														
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <hr class="my-2">
+                    
+                    <div class="d-flex flex-start">
+                        <img class="rounded-circle shadow-1-strong me-3" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="40" height="40">
+                        <a href="" class="text-decoration-none text-black">
+                            <div>
+                                <h6 class="fw-bold mb-1">Publisher Name</h6>
+                                <div class="d-flex align-items-center mb-1">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <small class="mb-0 text-muted">
+                                            <i class="fa-regular fa-calendar px-1"></i>March 15, 2024
+                                        </small>
+                                    </div>
+                                </div>
+                                <p class="mb-0">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.														
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+						<div class="catagories rounded border col-md-auto p-3 mt-0 bg-white rounded">
+    <div class="catagory__title">
+        <div class="header__title mb-1">
+            <p class="h4 text-capitalize text-center mb-3 text-muted">Catagories</p>
+        </div>
+    </div>
+    <div class="catagory__list col-auto">
+        
+    <a href="" class="d-flex text-decoration-none justify-content-center border-bottom py-2">
+				<p class="text-capitalize text-muted pb-0 mb-0 LeftCatName">Category A</p>
+				<small><p class="mb-0 text-muted">(23)</p></small>
+			</a><a href="" class="d-flex text-decoration-none justify-content-center border-bottom py-2">
+				<p class="text-capitalize text-muted pb-0 mb-0 LeftCatName">Category Category B</p>
+				<small><p class="mb-0 text-muted">(23)</p></small>
+			</a><a href="" class="d-flex text-decoration-none justify-content-center border-bottom py-2">
+				<p class="text-capitalize text-muted pb-0 mb-0 LeftCatName">Category &amp; Category</p>
+				<small><p class="mb-0 text-muted">(23)</p></small>
+			</a><a href="" class="d-flex text-decoration-none justify-content-center border-bottom py-2">
+				<p class="text-capitalize text-muted pb-0 mb-0 LeftCatName">Category Tips</p>
+				<small><p class="mb-0 text-muted">(23)</p></small>
+			</a><a href="" class="d-flex text-decoration-none justify-content-center border-bottom py-2">
+				<p class="text-capitalize text-muted pb-0 mb-0 LeftCatName">Category &amp; Category</p>
+				<small><p class="mb-0 text-muted">(23)</p></small>
+			</a><a href="" class="d-flex text-decoration-none justify-content-center border-bottom py-2">
+				<p class="text-capitalize text-muted pb-0 mb-0 LeftCatName">Category &amp; Category Category</p>
+				<small><p class="mb-0 text-muted">(23)</p></small>
+			</a><a href="" class="d-flex text-decoration-none justify-content-center border-bottom py-2">
+				<p class="text-capitalize text-muted pb-0 mb-0 LeftCatName">Category &amp; AI</p>
+				<small><p class="mb-0 text-muted">(23)</p></small>
+			</a><a href="" class="d-flex text-decoration-none justify-content-center border-bottom py-2">
+				<p class="text-capitalize text-muted pb-0 mb-0 LeftCatName">Category Worker</p>
+				<small><p class="mb-0 text-muted">(23)</p></small>
+			</a><a href="" class="d-flex text-decoration-none justify-content-center border-bottom py-2">
+				<p class="text-capitalize text-muted pb-0 mb-0 LeftCatName">Category category&amp; Design</p>
+				<small><p class="mb-0 text-muted">(23)</p></small>
+			</a></div>
+</div>
+						<div class="recent__post rounded col-md-auto mt-3 bg-white p-3">
+    <div class="recent_post-title mb-3">
+        <p class="h5 text-capitalize text-center">popular articles</p>
+    </div>
+    <div class="posts__data mt-3 align-items-center">
+        <img src="post_04.png" alt="" class="w-100 mb-2">
+        <div class="text__content p-1">
+            <p class="card-text mb-0 lh-sm fw-bold">
+                Lorem ipsum dolor sit amet
+            </p>
+            <small class="blog-post__detail d-flex align-items-start py-1 text-black-50">
+                <span class="text-muted">by</span><span class="card-author ps-1 text-black">pubusername</span>
+                <span class="card-date"><i class="fa-solid fa-clock px-1"></i>Jan 22, 2025</span>
+            </small>
+            <p class="text-secondary">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. .
+            </p>
+        </div>
+    </div>
+    <hr class="my-2">
+    <div class="posts__data mt-3 align-items-center">
+        <img src="post_04.png" alt="" class="w-100 mb-2">
+        <div class="text__content p-1">
+            <p class="card-text mb-0 lh-sm fw-bold">
+                Lorem ipsum dolor sit amet
+            </p>
+            <small class="blog-post__detail d-flex align-items-start py-1 text-black-50">
+                <span class="text-muted">by</span><span class="card-author ps-1 text-black">pubusername</span>
+                <span class="card-date"><i class="fa-solid fa-clock px-1"></i>Jan 22, 2025</span>
+            </small>
+            <p class="text-secondary">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+        </div>
+    </div>
+    <hr class="my-2">
+    <div class="posts__data mt-3 align-items-center">
+        <img src="post_04.png" alt="" class="w-100 mb-2">
+        <div class="text__content p-1">
+            <p class="card-text mb-0 lh-sm fw-bold">
+                Lorem ipsum dolor sit amet
+            </p>
+            <small class="blog-post__detail d-flex align-items-start py-1 text-black-50">
+                <span class="text-muted">by</span><span class="card-author ps-1 text-black">pubusername</span>
+                <span class="card-date"><i class="fa-solid fa-clock px-1"></i>Jan 22, 2025</span>
+            </small>
+            <p class="text-secondary">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+        </div>
+    </div>
+    <hr class="my-2">
+    <div class="posts__data mt-3 align-items-center">
+        <img src="post_04.png" alt="" class="w-100 mb-2">
+        <div class="text__content p-1">
+            <p class="card-text mb-0 lh-sm fw-bold">
+                Lorem ipsum dolor sit amet
+            </p>
+            <small class="blog-post__detail d-flex align-items-start py-1 text-black-50">
+                <span class="text-muted">by</span><span class="card-author ps-1 text-black">pubusername</span>
+                <span class="card-date"><i class="fa-solid fa-clock px-1"></i>Jan 22, 2025</span>
+            </small>
+            <p class="text-secondary">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+        </div>
+    </div>
+</div>
+						<div class="recent__posts rounded col-md-auto mt-3 bg-white p-3 mb-4 mb-sm-4 mb-md-4">
+    <div class="recent_post-title">
+        <p class="h6 text-capitalize">social</p>
+    </div>
+    <div class="social__share d-flex justify-content-between mt-3 gap-2">
+        <a class="btn btn-primary text-capitalize me-2 border-0" style="background-color: #3b5998" href="#!" role="button"><i class="fab fa-facebook"></i></a>
+        <a class="btn btn-primary text-capitalize me-2 border-0" style="background-color: #c61118" href="#!" role="button"><i class="fab fa-pinterest"></i></a>
+        <a class="btn btn-primary text-capitalize me-2 border-0" style="background-color: #55acee" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+        <a class="btn btn-primary text-capitalize me-2 border-0" style="background-color: #0082ca" href="#!" role="button"><i class="fab fa-linkedin"></i></a>
+        <a class="btn btn-primary text-capitalize border-0" style="background-color: #25d366" href="#!" role="button"><i class="fab fa-whatsapp"></i></a>
+    </div>
+</div>
+
+					</div>
+				</aside>
+				<section class="blog__posts-lists container-fluid mt-0 px-0 rounded xs-mt">
+					<div class="mt-3 blog__posts-items col-sm-12 col-md-12 col-lg-12 col-xl-12">
+						<div class="container-lg p-0 m-0 bg-white rounded">
+							<div class="text-content container mw-100 p-3 py-0 pt-3">
+								<div class="post_-title">
+									<p class="h4 mb-0 ArticleTitle">Be specific and imagine you�re selling this content</p>
+								</div>
+							</div>
+							<div class="text-content container mw-100 p-3 py-0 pt-4">
+								<div class="associated__catalog ArticleCategories pb-3">								
+								<a style="text-decoration:none;" href="/category/botany-soil-science/articles"><small class="text-primary text-uppercase fw-bold ">Category &amp; Category Science</small></a><span class="h4 ms-3">.</span><a style="text-decoration:none;" href="/category/mental-health-and-green-spaces/articles"><small class="text-primary text-uppercase fw-bold ms-3">Category Health &amp; Category Spaces</small></a></div>
+								<small class="blog-post__detail d-flex align-items-center py-1 text-black-50">
+									<div class="card-avatar">
+										<img class="img-thumbnail me-2 PostedByAvatar" src="avatar.png" alt="" width="30px">
+									</div>
+									by<span class="card-author ps-1 text-black">pubusername</span>
+									<span class="card-date"><i class="fa-solid fa-clock px-1"></i>Jan 22, 2025</span>
+								</small>
+								<div class="social__share mt-2">
+									<a class="btn btn-primary text-capitalize me-2 border-0" style="background-color: #3b5998" target="_blank" href="" role="button"><i class="fab fa-facebook me-2"></i>share</a>
+									<a class="btn btn-primary text-capitalize me-2 border-0" style="background-color: #c61118" href="#!" role="button"><i class="fab fa-pinterest me-2"></i>pinit</a>
+									<a class="btn btn-primary text-capitalize me-2 border-0" style="background-color: #55acee" target="_blank" href="" role="button"><i class="fab fa-twitter me-2"></i>Twitter</a>
+									<a class="btn btn-primary text-capitalize me-2 my-2 border-0" style="background-color: #0082ca" target="_blank" href="" role="button"><i class="fab fa-linkedin me-2"></i>LinkedIn</a>
+									<a class="btn btn-primary text-capitalize border-0" style="background-color: #25d366" target="_blank" href="" role="button"><i class="fab fa-whatsapp me-2"></i> share</a>
+								</div>
+							</div>
+							<div class="myasets">
+								
+							<div class="img-g container-fluid p-3 m-0">
+				<img class="ArticleImage img-fluid w-100" alt="Article Image" src="content_2025-01-21_22-42-06.jpeg">
+			</div><div class="text-content container mw-100 p-3 py-0">
+				<div class="article ArticleDescription mt-4 pb-3">Be specific and imagine you�re selling this content<br>Be specific and imagine you�re selling this content<br>Be specific and imagine you�re selling this content<br>Be specific and imagine you�re selling this content<br>Be specific and imagine you�re selling this content<br>Be specific and imagine you�re selling this content<br>Be specific and imagine you�re selling this content<br>Be specific and imagine you�re selling this content<br>Be specific and imagine you�re selling this content<br>Be specific and imagine you�re selling this content<br>Be specific and imagine you�re selling this content<br>Be specific and imagine you�re selling this content<br>Be specific and imagine you�re selling this content<br>Be specific and imagine you�re selling this content</div>
+			</div></div>
+							
+							<div class="text-content container mw-100 p-3 py-0 pt-4">
+								<div class="social__share mt-2">
+									<a class="btn btn-primary text-capitalize me-2 border-0" style="background-color: #3b5998" href="#" role="button"><i class="fab fa-facebook me-2"></i>share</a>
+									<a class="btn btn-primary text-capitalize me-2 border-0" style="background-color: #c61118" href="#!" role="button"><i class="fab fa-pinterest me-2"></i>pinit</a>
+									<a class="btn btn-primary text-capitalize me-2 border-0" style="background-color: #55acee" target="_blank" href="" role="button"><i class="fab fa-twitter me-2"></i>Twitter</a>
+									<a class="btn btn-primary text-capitalize me-2 my-2 border-0" style="background-color: #0082ca" target="_blank" href="" role="button"><i class="fab fa-linkedin me-2"></i>LinkedIn</a>
+									<a class="btn btn-primary text-capitalize border-0" style="background-color: #25d366" target="_blank" href="" role="button"><i class="fab fa-whatsapp me-2"></i> share</a>
+									<a onclick="OpenComplaintBox();" class="btn btn-primary text-capitalize border-0" style="background-color: red" href="#!" role="button">
+										<i class="fas fa-flag icon"></i> Report Content
+									</a>
+								</div>
+								<div class="container-report pb-3">
+									<div class="column1-report">Content ID: 21</div>
+									<div class="column2-report">
+										<a href="#"><i class="fas fa-flag icon" onclick="OpenComplaintBox();"></i> Report Content</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<section class="gradient-custom">
+							<div class="container-md col-md-auto mw-100 my-3 py-3 m-0 p-0">
+								<div class="d-flex justify-content-center">									
+									<div class="card w-100">
+										<div class="card-body p-4 CommentsSection">
+    <h4 class="mb-3 pb-2 text-capitalize text-center">
+        comments
+    </h4>
+    
+    <div class="d-flex CommentsBody">
+
+    <div class="d-flex flex-start mt-4">
+                <img class="rounded-circle shadow-1-strong me-3" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(12).webp" alt="avatar" width="65" height="65">
+                <div class="flex-grow-1 flex-shrink-1">
+                    <div>
+                        <div class="d-flex justify-content-start align-items-center">
+                            <p class="mb-1 AuthorandTime">pubusername<span class="small"> <i class="fa-solid fa-clock px-1"></i>21 Jan 2025 18:09</span></p>
+                            <a href="#!"><i class="bi bi-reply-all-fill ms-4"></i></a>
+                        </div>
+                        <p class="small mb-0 CommentDescription">testing the article root comment A</p>
+                    </div>
+					<div class="children"><div class="d-flex flex-start mt-4">
+				<a class="me-3" href="#">
+					<img class="rounded-circle shadow-1-strong" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="avatar" width="65" height="65">
+				</a>
+				<div class="flex-grow-1 flex-shrink-1">
+					<div>
+						<div class="d-flex justify-content-between align-items-center">
+							<p class="mb-1 AuthorandTime">pubusername<span class="small"> <i class="fa-solid fa-clock px-1"></i>21 Jan 25 18:09</span></p>
+						</div>
+						<p class="small mb-0 CommentDescription">Testing the child comment</p>
+					</div>
+				</div>
+			</div></div>
+					<!--Start child here-->
+                </div>
+            </div></div>
+    
+</div>
+										<form class="row g-3 p-4 d-flex flex-column flex-md-row CommentForm" novalidate="novalidate">
+    <div id="CommentResponseModal" class="modalk">
+        <div class="CommentMainClass">
+            <i class="CommentIconcls"></i>
+            <p style="padding-top: 10px" class="commentresponse">
+            </p>
+            <span class="closeModal" onclick="closeModal()">�</span>
+        </div>
+    </div>
+    
+    <p class="h5 text-capitalize text-center">
+        leave a reply:
+    </p>
+    <div class="col">
+        <input type="text" class="form-control" placeholder="Your name" aria-label="Your name">
+    </div>
+    <div class="col">
+        <input type="email" class="form-control" placeholder="Your email" value="" readonly="" aria-label="email">
+    </div>
+    <div class="col-md-12">
+        <textarea rows="5" name="txtCommentDescription" class="form-control txtCommentDescription" placeholder="Leave a message here"></textarea>
+    </div>
+    <input value="post" type="submit" class="btn btn-primary text-capitalize col-3 col-md-2 col-lg-2 ms-2">
+    <img src="ajax-loader.gif" style="display: none;width:auto; height:auto;" class="imgProgress">
+</form>
+									</div>									
+								</div>
+							</div>
+						</section>
+
+                        <section class="gradient-custom">
+							<div class="container-md col-md-auto mw-100 my-3 py-3 m-0 p-0">
+								<div class="d-flex justify-content-center">									
+									<div class="card w-100">
+										<div class="card-body p-4 CommentsSection">
+    
+<main>
+    <form name="reviewForm" id="reviewForm">
+        <div class="criteria">
+            <h2>Share Your Experience</h2>
+            <div class="criterion">
+                <label>Content Quality</label>
+                <div class="stars" data-criterion="quality"></div>
+            </div>
+            <div class="criterion">
+                <label>Clarity & Readability</label>
+                <div class="stars" data-criterion="clarity"></div>
+            </div>
+            <div class="criterion">
+                <label>Engagement Level</label>
+                <div class="stars" data-criterion="engagement"></div>
+            </div>
+            <div class="criterion">
+                <label>Innovation & Creativity</label>
+                <div class="stars" data-criterion="originality"></div>
+            </div>
+            <div class="criterion">
+                <label>Visual Presentation</label>
+                <div class="stars" data-criterion="structure"></div>
+            </div>
+        </div>
+        <button type="submit">Submit Feedback</button>
+    </form>
+</main>
+									</div>									
+								</div>
+							</div>
+						</section>
+					</div>
+				</section>
+			</div>
+		</section>
+
+		<div class="modal fade" id="btnComplaintAcknowledgement" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="btnStartTwoFactorAuthDialog" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header px-4">
+						<h1 class="modal-title fs-5 fw-semibold titleActiveInActiveArticle" id="staticBackdropLabel">
+							<i class="bi bi-check-circle-fill text-success me-2"></i>Thanks for letting us know about this
+						</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body px-4" style="font-size:14px;">
+						<p class="fs-14"><b>Good news!</b></p>
+						<p>We have received your report and will investigate and take action on it shortly.
+						</p>
+					</div>
+					<div class="modal-footer px-4">
+						<button type="button" data-bs-target="#btnComplaintAcknowledgement" data-bs-toggle="modal" class="btn btn-primary btnDoneComplaint">Done</button>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="btnComplaintBox" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="btnStartTwoFactorAuthDialog" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header border-bottom-0 px-4">
+						<h1 class="modal-title fs-5 fw-semibold titleActiveInActiveArticle" id="staticBackdropLabel">Help us understand what's happening
+						</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body px-4" style="font-size:14px;">
+						<div class="Step-non-others">
+							<p class="fs-14"><b>What's going on?</b></p>
+							<div class="form-check">
+								<input value="Misleading Information" class="form-check-input" type="radio" name="flexRadioDefault" id="btnMisleadingInfo">
+								<label class="form-check-label" for="btnMisleadingInfo">
+									Misleading Information
+								</label>
+							</div>
+							<div class="form-check">
+								<input value="Offensive Content" class="form-check-input" type="radio" name="flexRadioDefault" id="benOffensiveContent">
+								<label class="form-check-label" for="benOffensiveContent">
+									Offensive Content
+								</label>
+							</div>
+							<div class="form-check">
+								<input value="Plagiarism" class="form-check-input" type="radio" name="flexRadioDefault" id="btnPlagasrism">
+								<label class="form-check-label" for="btnPlagasrism">
+									Plagiarism
+								</label>
+							</div>
+
+							<div class="form-check">
+								<input value="Inappropriate Language" class="form-check-input" type="radio" name="flexRadioDefault" id="btnInAppropriateLanguage">
+								<label class="form-check-label" for="btnInAppropriateLanguage">
+									Inappropriate Language
+								</label>
+							</div>
+							<div class="form-check">
+								<input value="Others" class="form-check-input" type="radio" name="flexRadioDefault" id="btnOthers">
+								<label class="form-check-label" for="btnOthers">
+									Others
+								</label>
+							</div>
+						</div>
+						<div class="Step-others" style="display:none;">
+							<p class="fs-14"><b>Please describe the issue</b></p>
+							<textarea class="form-control txtReportDescription" placeholder="Type minimum 10 chars..." rows="5"></textarea>
+						</div>
+					</div>
+					<div class="modal-footer border-top-0 px-4">
+						<button type="button" class="btn btn-light fs-14 btncancel">Cancel</button>
+						<button type="button" class="btn btn-primary fs-14 btnContinueReport">Continue</button>
+						<img src="ajax-loader.gif" style="display: none;" class="imgProgress">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="bg-white footer" style="padding-top: 2.5rem;">
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="row justify-content-lg-between">
+                <div class="col-lg-4">
+                    <div class="footer_logo">
+                        <img src="logo.svg" alt="Logo">
+                        <a href="#">Testing<span class="text-primary">Me</span></a>
+                    </div>
+                    <div class="footer_logo_text">We can make a positive impact on our environment and create a healthier, more sustainable future for all</div>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="footer_title">SUPPORT</h5>
+                    <ul class="footer_links list_unstyled">
+                        <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Articles</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="footer_title">CONTACT</h5>
+                    <ul class="footer_links list_unstyled">
+                        <li><b>Email:</b><a href="mailto:info@testingme.com">support@testingme.com</a></li>
+                        <li><b>Tel:</b><a href="tel:+234 813 000 0000">+12345678909</a></li>
+                        <li><b>Address:</b><address>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</address></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="d-flex footer_social justify-content-center py-3">
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer_copy text-center">
+        <span>Copyright | TestingMe</span>
+    </div>
+</footer>
+		<script src="https://connect.facebook.net/en_US/sdk.js?hash=002df8d56b65f36ea21f07092c8731dc" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+<script>
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    function GetDate(dat) {
+        var formattedDate = new Date(dat);
+        var d = formattedDate.getDate();
+        var m =  formattedDate.getMonth();
+        m += 1;
+        var y = formattedDate.getFullYear();
+
+        return (months[m-1] + " " + d + ", " + y);
+    }
+
+    function GetDateTime(dat) {
+        var formattedDate = new Date(row.PublishDate);
+        var d = formattedDate.getDate();
+        var m =  formattedDate.getMonth();
+        m += 1;
+        var y = formattedDate.getFullYear();
+
+        return (months[m-1] + " " + d + ", " + y);
+    }
+</script>
+		
+		
+		<script>
+			
+			$("[name='flexRadioDefault']").click(function() {
+				$(".btnContinueReport").prop("disabled", false);
+			});
+
+			$(".txtReportDescription").on('input',function(e){
+				if(e.target.value === ''){
+					$(".btnContinueReport").prop("disabled", true);
+				} else {
+					var result = ValidateReportSubmission();
+					$(".btnContinueReport").prop("disabled", !ValidateReportSubmission());
+				}
+			});
+
+			function ValidateReportSubmission() {
+				if($(".txtReportDescription").val() == "") {
+					return false;
+				}
+				if($.trim($(".txtReportDescription").val()).length < 10) {
+					return false;
+				}
+				if($("[name='flexRadioDefault']:checked").val() == "") {
+					return false;
+				}
+				return true;
+			}
+
+			$(".btnContinueReport").click(function() {
+				var id = this;
+				if(ValidateReportSubmission()) {
+					$(id).hide();
+					$(id).closest("div").find(".btncancel").hide();
+					$(".imgProgress").show();
+					$("#btnComplaintBox").modal("toggle");
+					$("#btnComplaintAcknowledgement").modal("toggle");
+					$(".imgProgress").hide();
+					
+					
+				} else {
+					$(".btnContinueReport").prop("disabled", true);
+					$(".Step-non-others").hide();
+					$(".Step-others").show();
+				}
+			});
+
+			
+
+			function OpenComplaintBox() {
+				$(".btnContinueReport").prop("disabled", true);
+				$(".txtReportDescription").val("");
+
+				$(".btnContinueReport").show();
+
+				$(".Step-non-others").show();
+				$(".Step-others").hide();
+
+				$("[name='flexRadioDefault']").prop("checked", false);	
+				$("#btnComplaintBox").modal('toggle');
+			} 
+		</script>
+		
+		<script>
+			function showModal() {
+				document.getElementById("CommentResponseModal").style.display = "block";
+			}
+	  
+			function closeModal() {
+				document.getElementById("CommentResponseModal").style.display = "none";
+			}
+		</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const starsContainers = document.querySelectorAll('.stars');
+
+        starsContainers.forEach(container => {
+            for (let i = 1; i <= 5; i++) {
+                const star = document.createElement('span');
+                star.textContent = '★';
+                star.dataset.value = i;
+
+                star.addEventListener('click', () => {
+                    const stars = container.querySelectorAll('span');
+                    stars.forEach(s => s.classList.remove('active'));
+
+                    for (let j = 0; j < i; j++) {
+                        stars[j].classList.add('active');
+                    }
+
+                    container.dataset.rating = i;
+                });
+
+                container.appendChild(star);
+            }
+        });
+
+        const form = document.getElementById('reviewForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const reviewData = {};
+            starsContainers.forEach(container => {
+                const criterion = container.dataset.criterion;
+                const rating = container.dataset.rating || 0;
+                reviewData[criterion] = rating;
+            });
+
+            console.log('Review Submitted:', reviewData);
+            alert('Thank you for your valuable feedback!');
+        });
+    });
+</script>
+		
+</body></html>
