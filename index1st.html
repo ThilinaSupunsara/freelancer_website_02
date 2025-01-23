@@ -74,36 +74,45 @@
 				margin-bottom: 20px;
 			}
 		</style>
-<style>
-    main {
+        <style>
+          
+          main {
         padding: 1rem;
         max-width: 900px;
-        margin: 2rem auto;
-        font-family: Arial, sans-serif;
+        margin: 0 auto;
     }
 
-    h2 {
+   
+
+    .criteria h2 {
         text-align: center;
         font-size: 1.5rem;
-        color: #333;
-        margin-bottom: 1rem;
+        margin: 0 0 1rem 0;
+        color: #4a4a4a;
+        font-weight: 600;
     }
 
     .criterion {
+        margin-bottom: 0.75rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 12px;
+        background: #f7f7f7;
+        transition: all 0.3s ease;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        background: #f7f8fa;
-        padding: 0.75rem;
-        border-radius: 8px;
-        margin-bottom: 1rem;
-        border: 1px solid #e0e0e0;
+        justify-content: space-between;
+    }
+
+    .criterion:hover {
+        background: #eeeeee;
+        transform: translateX(2px);
     }
 
     label {
         font-size: 0.95rem;
-        font-weight: 600;
-        color: #555;
+        font-weight: 500;
+        color: #333333;
+        margin-right: 1rem;
     }
 
     .stars {
@@ -113,70 +122,64 @@
 
     .stars span {
         font-size: 1.5rem;
-        color: #ddd;
         cursor: pointer;
-        transition: transform 0.3s, color 0.3s;
+        color: #cccccc;
+        transition: all 0.3s ease;
+        padding: 0.15rem;
     }
 
-    .stars span:hover,
-    .stars span.active {
-        color: #ffcc00;
+    .stars span:hover {
         transform: scale(1.2);
+        color: #ffcc00;
     }
 
-    textarea {
-        width: 100%;
-        padding: 0.75rem;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        margin-top: 1rem;
-        resize: none;
-        min-height: 100px;
-        font-size: 0.9rem;
-        color: #333;
-    }
-
-    .button-group {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 1rem;
+    .stars span.active {
+        color: #ff9900;
     }
 
     button {
-        flex: 1;
+        width: 100%;
         padding: 0.75rem;
-        font-size: 1rem;
-        font-weight: bold;
-        border-radius: 8px;
+        margin-top: 1rem;
         border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #ffffff;
+        background: rgba(0, 113, 188, 0.8);
         cursor: pointer;
-        transition: background-color 0.3s, transform 0.3s;
-    }
-
-    .discard {
-        background: #f5f5f5;
-        color: #333;
-        margin-right: 0.5rem;
-    }
-
-    .discard:hover {
-        background: #e0e0e0;
-    }
-
-    .submit {
-        background: #0071bc;
-        color: #fff;
-        margin-left: 0.5rem;
-    }
-
-    .submit:hover {
-        background: #005fa3;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
     }
 
     button:hover {
         transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(255, 153, 0, 0.4);
+        background: rgb(0, 113, 188);
     }
-</style>
+
+    @media (max-width: 600px) {
+        form {
+            padding: 1rem;
+        }
+
+        .criterion {
+            padding: 0.5rem;
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+        }
+
+        label {
+            font-size: 0.9rem;
+        }
+
+        .stars span {
+            font-size: 1.25rem;
+        }
+    }
+        </style>
 	</head>
 
 	<body>
@@ -349,37 +352,29 @@
 
 </section>
 		
-		 <!-- Page Header -->
-         <section class="page-header">
-            <div class="container">
-                <div class="row search__header">
-                    <!-- Navigation Bar on the Left -->
-                    <div class="col-12 col-md-6">
-                        <div class="nav-bar">
-                            <ul class="nav">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="/search/articles">Articles</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/search/blogs">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/search/stories">Story</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-    
-                    <!-- Search Bar on the Right -->
-                    <div class="col-12 col-md-6">
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fa fa-search"></i></span>
-                            <input type="text" class="form-control form-input" placeholder="Search...">
-                        </div>
-                    </div>
-                </div>
+		<section class="page-header">
+    <div class="container">
+        <div class="row search__header col-12 col-sm-12 col-md-12">
+            <div class="form d-flex row-items-start col-12 col-md-12">
+                <i class="fa fa-search ps-2"></i>
+                <input type="text" class="form-control form-input">
             </div>
-        </section>
+        </div>
+        <div class="nav-bar position-absolute mt-3 mb-0">
+            <ul class="gap-4 align-items-center d-flex align-items-center list-unstyled text-light mb-0">
+                <li class="nav-item mt-2">
+                    <a class="nav-link px-3 pb-2 active" href="/search/articles">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 pb-2" href="/search/blogs">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 pb-2" href="/search/stories">Story</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>	
 	
 
 		<section class="article-body post__listing mb-5 row align-items-start align-items-xl-center col-md-12 col-lg-12 col-xl-12 mx-md-auto ms-sm-auto">
@@ -730,48 +725,34 @@
 									<div class="card w-100">
 										<div class="card-body p-4 CommentsSection">
     
-                                            <main>
-                                                <form name="reviewForm" id="reviewForm">
-                                                    <div class="criteria">
-                                                        <h2>Share Your Experience</h2>
-                                            
-                                                        <!-- Criteria List -->
-                                                        <div class="criterion">
-                                                            <label>Content Quality</label>
-                                                            <div class="stars" data-criterion="quality"></div>
-                                                        </div>
-                                                        <div class="criterion">
-                                                            <label>Clarity & Readability</label>
-                                                            <div class="stars" data-criterion="clarity"></div>
-                                                        </div>
-                                                        <div class="criterion">
-                                                            <label>Engagement Level</label>
-                                                            <div class="stars" data-criterion="engagement"></div>
-                                                        </div>
-                                                        <div class="criterion">
-                                                            <label>Innovation & Creativity</label>
-                                                            <div class="stars" data-criterion="originality"></div>
-                                                        </div>
-                                                        <div class="criterion">
-                                                            <label>Visual Presentation</label>
-                                                            <div class="stars" data-criterion="structure"></div>
-                                                        </div>
-                                            
-                                                        <!-- Review Input -->
-                                                        <textarea 
-                                                            placeholder="Write a detailed review (minimum 10 characters)..."
-                                                            minlength="5"
-                                                            required
-                                                        ></textarea>
-                                            
-                                                        <!-- Buttons -->
-                                                        <div class="button-group">
-                                                            <button type="button" class="discard">Discard</button>
-                                                            <button type="submit" class="submit">Submit Feedback</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </main>
+<main>
+    <form name="reviewForm" id="reviewForm">
+        <div class="criteria">
+            <h2>Share Your Experience</h2>
+            <div class="criterion">
+                <label>Content Quality</label>
+                <div class="stars" data-criterion="quality"></div>
+            </div>
+            <div class="criterion">
+                <label>Clarity & Readability</label>
+                <div class="stars" data-criterion="clarity"></div>
+            </div>
+            <div class="criterion">
+                <label>Engagement Level</label>
+                <div class="stars" data-criterion="engagement"></div>
+            </div>
+            <div class="criterion">
+                <label>Innovation & Creativity</label>
+                <div class="stars" data-criterion="originality"></div>
+            </div>
+            <div class="criterion">
+                <label>Visual Presentation</label>
+                <div class="stars" data-criterion="structure"></div>
+            </div>
+        </div>
+        <button type="submit">Submit Feedback</button>
+    </form>
+</main>
 									</div>									
 								</div>
 							</div>
@@ -1023,7 +1004,6 @@
     document.addEventListener('DOMContentLoaded', () => {
         const starsContainers = document.querySelectorAll('.stars');
 
-        // Add stars dynamically
         starsContainers.forEach(container => {
             for (let i = 1; i <= 5; i++) {
                 const star = document.createElement('span');
@@ -1056,30 +1036,10 @@
                 reviewData[criterion] = rating;
             });
 
-            const reviewText = form.querySelector('textarea').value;
-            reviewData['reviewText'] = reviewText;
-
             console.log('Review Submitted:', reviewData);
-            alert('Thank you for your feedback!');
-        });
-     // Handle Discard button
-     const discardButton = document.querySelector('.discard');
-        discardButton.addEventListener('click', () => {
-            // Reset all stars
-            starsContainers.forEach(container => {
-                const stars = container.querySelectorAll('span');
-                stars.forEach(star => star.classList.remove('active'));
-                container.dataset.rating = 0;
-            });
-
-            // Clear textarea
-            form.querySelector('textarea').value = '';
-
-            alert('Feedback discarded.');
+            alert('Thank you for your valuable feedback!');
         });
     });
-   
 </script>
-
 		
 </body></html>
