@@ -9,8 +9,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css">
 		<link rel="stylesheet" href="articles.css">
 		<link rel="stylesheet" href="footer.css">
-		<link rel="stylesheet" href="topnav.css">
-        <link rel="stylesheet" href="nav.css">		
+		<link rel="stylesheet" href="topnav.css">		
 			
 		<style>
 			body {
@@ -178,59 +177,12 @@
         transform: translateY(-2px);
     }
 </style>
-
-
 	</head>
 
 	<body>
-
-        <nav id="navbar" class="navbar custom-navbar">
-            <div class="logo">
-                <div class="header_left"><a class="navbar-brand" href="#">
-                </a><div class="navbar-brand d-flex align-items-center margin-left"><a class="navbar-brand" href="#">
-                    <img src="logo.svg" alt="Logo">
-                    </a><a href="/">Testing<span class="text-primary">Me</span></a>
-                </div>
-            </div>
-            </div>
-            <ul>
-              <li>
-                <a href="#section1" class="nav-link">
-                   Home
-                </a>
-              </li>
-              <li>
-                <a href="#section2" class="nav-link">
-                   Search
-                </a>
-              </li>
-              <li>
-                <a href="#section3" class="nav-link">
-                  Content
-                </a>
-              </li>
-              <li>
-                <a href="#section4" class="nav-link">
-                   comments
-                </a>
-              </li>
-              <li>
-                <a href="#section5" class="nav-link">
-                  Feedback
-                </a>
-              </li>
-              <li>
-                <a href="#section6" class="nav-link">
-                  SUPPORT & CONTACT
-                </a>
-              </li>
-            </ul>
-          </nav>
-        
-          
 		
 		
-		<section id="section1">
+		<section>
     <nav class="navbar navbar-expand-lg bg-white">
         <div class="container-fluid" id="small-screen1">
             <a class="navbar-brand" href="#">
@@ -398,7 +350,7 @@
 </section>
 		
 		 <!-- Page Header -->
-         <section id="section2" class="page-header">
+         <section class="page-header">
             <div class="container">
                 <div class="row search__header">
                     <!-- Navigation Bar on the Left -->
@@ -430,7 +382,7 @@
         </section>
 	
 
-		<section id="section3" class="article-body post__listing mb-5 row align-items-start align-items-xl-center col-md-12 col-lg-12 col-xl-12 mx-md-auto ms-sm-auto">
+		<section class="article-body post__listing mb-5 row align-items-start align-items-xl-center col-md-12 col-lg-12 col-xl-12 mx-md-auto ms-sm-auto">
 			<div class="container d-flex gap-3 flex-wrap-reverse flex-sm-wrap-reverse flex-md-wrap-reverse flex-lg-nowrap mx-md-0 mx-sm-0 justify-content-md-center justify-content-sm-center">
 				                
 				<aside class="side__bar col-sm-auto col-lg-3 col-md-12 mx-md-0 mt-md-0 mt-lg-3 mt-3 ms-0 ms-md-0 ms-sm-0">
@@ -703,7 +655,7 @@
 								</div>
 							</div>
 						</div>
-						<section id="section4" class="gradient-custom">
+						<section class="gradient-custom">
 							<div class="container-md col-md-auto mw-100 my-3 py-3 m-0 p-0">
 								<div class="d-flex justify-content-center">									
 									<div class="card w-100">
@@ -772,7 +724,7 @@
 							</div>
 						</section>
 
-                        <section id="section5" class="gradient-custom">
+                        <section class="gradient-custom">
 							<div class="container-md col-md-auto mw-100 my-3 py-3 m-0 p-0">
 								<div class="d-flex justify-content-center">									
 									<div class="card w-100">
@@ -828,6 +780,7 @@
 				</section>
 			</div>
 		</section>
+
 		<div class="modal fade" id="btnComplaintAcknowledgement" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="btnStartTwoFactorAuthDialog" aria-hidden="true">
 			<div class="modal-dialog modal-lg modal-dialog-centered">
 				<div class="modal-content">
@@ -907,7 +860,7 @@
 			</div>
 		</div>
 
-		<footer id="section6" class="bg-white footer" style="padding-top: 2.5rem;">
+		<footer class="bg-white footer" style="padding-top: 2.5rem;">
     <div class="container-fluid">
         <div class="col-md-12">
             <div class="row justify-content-lg-between">
@@ -969,8 +922,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
-
-
 
 <script>
     var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -1129,50 +1080,6 @@
     });
    
 </script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const navbar = document.getElementById("navbar");
-    const links = document.querySelectorAll(".nav-link");
-    const sections = document.querySelectorAll("[id^='section']");
-
-    window.addEventListener("scroll", () => {
-        // Check the scroll position
-        if (window.scrollY === 0) {
-            // Hide navbar when at the very top of the page
-            navbar.style.top = "-60px";
-        } else {
-            // Show navbar when scrolling down
-            navbar.style.top = "0";
-        }
-
-        // Highlight the current section
-        sections.forEach((section, index) => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= 100 && rect.bottom >= 100) {
-                links.forEach(link => link.classList.remove("active"));
-                links[index].classList.add("active");
-            }
-        });
-    });
-
-    // Smooth scrolling
-    links.forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const targetId = e.target.getAttribute("href").substring(1);
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 60,
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
-});
-    
-      </script>
 
 		
 </body></html>
